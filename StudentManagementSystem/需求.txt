@@ -1,1 +1,12 @@
+phase 1:
+find student info
+find all/add/update/remove student info
+find/add/update/remove class info
+
+
+phase 2
+find/add/update/remove sell record
+find/add/update/remove practical record
+
 1¡·progress bar in the main page left/total,maybe color as well,red for nearly end, gray for ended, green for >20 &&<80
+

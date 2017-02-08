@@ -11,7 +11,33 @@
 				"practicalname":"LOCK婚礼",
 				"practicaldate":"",
 				"remark":"上午实习，5点到"}
-		]
+		],
+	  "class":[{
+	  			"duringHour":5,//课时
+		  		"timeperiod":"a",//morning,afternoon and night
+					"from":"",
+					"to":"",
+					"remark":"发型课"},
+				{
+					"duringHour":5,//课时
+					"timeperiod":"a",//morning,afternoon and night
+					"from":"",
+					"to":"",
+					"remark":"基础"}]，
+		"extraDeal":[{
+		  		"dealDate":"",
+					"goods":"电发棒",
+					"cost":"50",
+					"amount":"150",
+					"status":"d",//d已发货done，p未发货pending
+					"remark":""},
+				{
+					"dealDate":"",
+					"goods":"",
+					"cost":"50",
+					"amount":"150",
+					"status":"p",//d已发货done，p未发货pending
+					"remark":"电发棒2支，卸妆棉2包，唇膏1支"}]，			
 		"totalCourseAmount":50,
 		"leftCourseAmount":20,
 		"phone":"1234567",
@@ -20,7 +46,8 @@
 		"dealType":"f",//options:分期f，一次性y，微信w，思明s
 		"dealDate":"",
 		"birthday":"",
-		"eMail":"ShinoCreation@qq.com"		
+		"eMail":"ShinoCreation@qq.com",
+		"constellation":1 //1-12 12星座		
 },
 {
 		"fullName":"Jim",
@@ -35,7 +62,9 @@
 				"practicalname":"kimi婚礼拍摄",
 				"practicaldate":"",
 			"remark":"全天实习"}
-		]
+		],
+		"class":[]，
+		"extraDeal":[],
 		"totalCourseAmount":30,
 		"leftCourseAmount":10,
 		"phone":"1234567",
@@ -44,18 +73,28 @@
 		"dealType":"y",//一次性，微信，思明
 		"dealDate":"",
 		"birthday":"",
-		"eMail":"ShinoCreation@qq.com"		
+		"eMail":"ShinoCreation@qq.com",
+		"constellation":1 //1-12 12星座			
 },
 {
 		"fullName":"Shino",
 		"weixinName":"ShinoCreation",
 		"courseType":"J",//Junior, personal
 		"expectEndDate":"",
-		"practicalSessions":[
-				"practicalname":"",
-				"practicaldate":"",
-				"remark":""
-		]
+		"practicalSessions":[],
+		"class":[{
+					"duringHour":5,//课时
+		  		"timeperiod":"a",//morning,afternoon and night
+					"from":"",
+					"to":"",
+					"remark":"发型课"},
+				{
+					"duringHour":5,//课时
+					"timeperiod":"a",//morning,afternoon and night
+					"from":"",
+					"to":"",
+					"remark":"基础"}]，
+		"extraDeal":[],
 		"totalCourseAmount":"",
 		"leftCourseAmount":"",
 		"phone":"",
@@ -63,7 +102,8 @@
 		"amount":"",
 		"dealDate":"",
 		"birthday":"",
-		"eMail":""		
+		"eMail":"",
+		"constellation":1 //1-12 12星座			
 }
 	
 	 <label for="fullname">全名：</label>

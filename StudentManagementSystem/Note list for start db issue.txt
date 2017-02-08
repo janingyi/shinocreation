@@ -1,0 +1,1 @@
+can not start db----->clean the mongod.lock compare with bak folder

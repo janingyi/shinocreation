@@ -1,0 +1,7 @@
+git add
+git fetch
+git commit -a -m 'initial commit'
+git push
+
+git config --global user.email "janingyi@163.com"
+git config --global user.name "jim"
