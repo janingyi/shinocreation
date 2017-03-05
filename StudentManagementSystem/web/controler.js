@@ -363,7 +363,9 @@ define(function(){
      $(document).on("pageshow","#newclassstudentpage",function(){ 
      	$("#selectedStudents").html("No selected student yet.");
       	_ncp_selectedStudentJson=[];
-      	$("#ncp_addClassBtn").text("Add (0)");
+      	
+      	$("#ncp_addClassBtn").removeClass("ui-disabled");
+      	$("#ncp_addClassBtn").text("Save (0)");
      	$('#ncdp_classDate').val(new Date().format("yyyy-MM-dd"));
     		$('#ncdp_duringHour').val('3');
     	  $('#ncdp_from').val('');
@@ -402,6 +404,12 @@ define(function(){
       //update page init: bind to display the selected student info from main page	
       $(document).on("pagebeforeshow","#updatestudentpage",function(){ 
 	      	console.log("update page:selected to update student id:"+_selectedStudentObjId); 
+	      	
+	      	$("#updateStuBtn").removeClass("ui-disabled");
+	      	$("#updateStuBtn").text("Update");
+	      	$("#delStuBtn").removeClass("ui-disabled");
+	      	$("#delStuBtn").text("Delete");
+	      	
 	      	//loop to update all field in the all data
 	      	var studentLen = _fullData.length;
 	      	for(var i=0; i<studentLen; i++){
@@ -469,6 +477,8 @@ define(function(){
       	
       	$(document).on("pagehide","#newstudentpage",function(){ 
 	      	console.log("Clear the data in the new student page"); 
+									$("#addStuBtn").removeClass("ui-disabled");
+									$("#addStuBtn").text("Add");
 									$("#main_filter").val(0);
 									$('#main_filter').selectmenu('refresh', true);
 	      					$('#nsp_fullName').val('');
@@ -604,6 +614,9 @@ define(function(){
       	var remark = $('#nsp_remark').val();
       	var job = $('#nsp_job').val();
       	
+      	//disable the add button to avoid duplicate submit
+      	$("#addStuBtn").addClass("ui-disabled");
+      	$("#addStuBtn").text("saving...");
       	//alert('Add student nsp_fullName:'+$('#nsp_fullName').val());
       	$.ajax({ url: "http://192.168.0.105:8081/student", type:"PUT", 
 		      	dataType:"text", data:{fullName: fullname,
@@ -670,6 +683,9 @@ define(function(){
       	var remark = $('#usp_remark').val();
       	var job = $('#usp_job').val();
       	
+      	$("#updateStuBtn").addClass("ui-disabled");
+      	$("#updateStuBtn").text("saving...");
+      	  
       	$.ajax({ url: "http://192.168.0.105:8081/student", type:"POST", 
 		      	dataType:"text", data:{_id:_id,
 		      		fullName: fullname,
@@ -700,6 +716,8 @@ define(function(){
     	}
     	function deleteStudent(){
     		
+    		$("#delStuBtn").addClass("ui-disabled");
+      	$("#delStuBtn").text("saving...");
     	//TODO data validate and pop not invalide input note 
       	var _id = $('#usp__id').val();
       	      	
@@ -748,7 +766,9 @@ define(function(){
 		            }
 		        }
 		    }
-	  	      	
+		    //disable the add button to prevent duplicated submit
+	  	  $("#ncp_addClassBtn").addClass("ui-disabled");
+	  	  $("#ncp_addClassBtn").text("saving...");
 	    	//alert('Add class for students:'+_ncp_selectedStudentObjIdlist);
 	    	$.ajax({ url: "http://192.168.0.105:8081/class", type:"PUT", 
 		      	dataType:"text", data:{_ids: _ncp_selectedStudentObjIdlist,
